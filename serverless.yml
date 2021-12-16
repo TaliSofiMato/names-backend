@@ -1,0 +1,17 @@
+service: Names-api
+
+frameworkVersion: '2'
+
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: '20201221'
+
+functions:
+  getNames:
+    handler: handler.getNames
+    events:
+      - http:
+          path: /Names
+          method: get
